@@ -910,7 +910,7 @@ const engQuest = [
     "question": "Embroider (v)",
     "id": "100"
   }
-]
+];
 const vnAnswerList = [
   {
     "answer": "Máy ảnh chi tiết",
@@ -1312,7 +1312,19 @@ const vnAnswerList = [
     "answer": "Thiêu dệt",
     "id": "101"
   }
-]
+];
+const userAccount = [
+  {
+    "name": "Khôi",
+    "score": 347,
+    "userName": "userName 1",
+    "userPass": "userPass 1",
+    "timeLastLogin": "timeLastLogin 1",
+    "id": "1"
+  }
+];
+
+
 app.get('/', (req, res) => {
   res.send('Welcome to our homepage.')
   // res.send(engQuest)
@@ -1322,6 +1334,9 @@ app.get('/engQuest', (req, res) => {
 })
 app.get('/vnAnswerList', (req, res) => {
   res.send(vnAnswerList)
+})
+app.get('/userAccount', (req, res) => {
+  res.send(userAccount);
 })
 
 app.get('/about', (req, res) => {
