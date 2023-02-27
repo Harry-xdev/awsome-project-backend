@@ -1351,16 +1351,7 @@ app.post('/engQuest/:id', (req, res) => {
   const {ansD} = req.body;
   const {correction} = req.body
 
-  res.send({
-    id: id,
-    question: question,
-    ansA: ansA,
-    ansB: ansB,
-    ansC: ansC,
-    ansD: ansD,
-    correction: correction
-
-  })
+  res.send(engQuest)
 
 
 })
