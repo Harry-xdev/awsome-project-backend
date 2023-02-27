@@ -6,7 +6,7 @@ const port = 4000
 
 app.use(express.urlencoded({ extended: false }))
 // This code used to use req.body.somthing to acess to body of data
-
+app.use(express.json());
 
 const engQuest = [
 
@@ -1342,9 +1342,28 @@ app.get('/userAccount', (req, res) => {
 app.get('/about', (req, res) => {
   res.send('Thanks for learning more about us.')
 })
-// app.post('/engQuest', (req, res) => {
-//   res.send(vnAnswerList)  
-// })
+app.post('/engQuest/:id', (req, res) => {
+  const {id} = req.params;
+  const {question} = req.body;
+  const {ansA} = req.body;
+  const {ansB} = req.body;
+  const {ansC} = req.body;
+  const {ansD} = req.body;
+  const {correction} = req.body
+
+  res.send({
+    id: id,
+    question: question,
+    ansA: ansA,
+    ansB: ansB,
+    ansC: ansC,
+    ansD: ansD,
+    correction: correction
+
+  })
+
+
+})
 
 app.listen(port, () => {
   console.log(`Listening port: ${port}...`)
