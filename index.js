@@ -4,8 +4,9 @@ const express = require('express')
 const app = express()
 const port = 4000
 
-app.use(express.urlencoded({ extended: false }))
-// This code used to use req.body.somthing to acess to body of data
+// This code allow us URL endcoding IMPORTANT!!!
+app.use(express.urlencoded({ extended: false }));
+
 app.use(express.json());
 
 const engQuest = [
@@ -1326,11 +1327,11 @@ const userAccount = [
 
 
 app.get('/', (req, res) => {
-  res.send('Welcome to our homepage.')
+  res.send('Welcome to our homepage.');
   // res.send(engQuest)
 })
 app.get('/engQuest', (req, res) => {
-  res.send(engQuest)
+  res.send(engQuest);
 })
 app.get('/vnAnswerList', (req, res) => {
   res.send(vnAnswerList)
@@ -1340,22 +1341,17 @@ app.get('/userAccount', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-  res.send('Thanks for learning more about us.')
-})
-app.post('/engQuest/:id', (req, res) => {
-  const {id} = req.params;
-  const {question} = req.body;
-  const {ansA} = req.body;
-  const {ansB} = req.body;
-  const {ansC} = req.body;
-  const {ansD} = req.body;
-  const {correction} = req.body
-
-  res.send(engQuest)
+  res.send('Thanks for learning more about us.');
+});
 
 
-})
+app.post('/engQuest', (req, res) => {
+  console.log(req.body);
+  const english = req.body;
+  engQuest.push(english);
+  res.status(201).send(`Created user`);
+});
 
 app.listen(port, () => {
-  console.log(`Listening port: ${port}...`)
-})
+  console.log(`Listening port: ${port}...`);
+});
