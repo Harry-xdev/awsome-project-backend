@@ -6,7 +6,7 @@ const port = 4000
 
 // This code allow us URL endcoding IMPORTANT!!!
 app.use(express.urlencoded({ extended: false }));
-
+// Save with json() format IMPORTANT!!!
 app.use(express.json());
 
 const engQuest = [
@@ -1309,17 +1309,11 @@ const vnAnswerList = [
     "answer": "Độc đáo",
     "id": "100"
   },
-  {
-    "answer": "Thiêu dệt",
-    "id": "101"
-  }
 ];
 const userAccount = [
   {
     "name": "Khôi",
-    "score": 347,
-    "userName": "userName 1",
-    "userPass": "userPass 1",
+    "score": 350,
     "timeLastLogin": "timeLastLogin 1",
     "id": "1"
   }
@@ -1344,12 +1338,31 @@ app.get('/about', (req, res) => {
   res.send('Thanks for learning more about us.');
 });
 
-
 app.post('/engQuest', (req, res) => {
   console.log(req.body);
   const english = req.body;
   engQuest.push(english);
   res.status(201).send(`Created user`);
+});
+
+app.post('/vnAnswerList', (req, res) => {
+  console.log(req.body);
+  const answer = req.body;
+  vnAnswerList.push(answer);
+  console.log(vnAnswerList);
+  res.status(201).send(`Created answer`);
+});
+
+app.delete('/engQuest', (req, res) => {
+  console.log(req.body);
+  res.send('DELETE REQUEST CALLED');
+
+
+});
+app.delete('/vnAnswerList', (req, res ) => {
+  console.log(req.body);
+  res.send('DELETE REQUEST CALLED');
+
 });
 
 app.listen(port, () => {
