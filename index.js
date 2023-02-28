@@ -910,7 +910,133 @@ const engQuest = [
     "correction": "Thiêu dệt",
     "question": "Embroider (v)",
     "id": "100"
-  }
+  },
+  {
+    "question": "Machinist",
+    "ansA": "Những giá trị",
+    "ansB": "Thợ máy",
+    "ansC": "Bề mặt",
+    "ansD": "Máy ảnh kỹ thuật số",
+    "correction": "Thợ máy",
+    "id": "101"
+   },
+   {
+    "question": "Table tennis",
+    "ansA": "Bến cảng",
+    "ansB": "Bóng bàn",
+    "ansC": "Công nghệ",
+    "ansD": "Phân tích",
+    "correction": "Bóng bàn",
+    "id": "102"
+   },
+   {
+    "question": "Diameter",
+    "ansA": "Tiểu sử",
+    "ansB": "Toán học",
+    "ansC": "Trợ lý ảo",
+    "ansD": "Đường kính",
+    "correction": "Đường kính",
+    "id": "103"
+   },
+   {
+    "question": "Status",
+    "ansA": "Những giá trị",
+    "ansB": "Công thức",
+    "ansC": "Quá khứ",
+    "ansD": "Trạng thái",
+    "correction": "Trạng thái",
+    "id": "104"
+   },
+   {
+    "question": "Your opinion",
+    "ansA": "Ý kiến của bạn",
+    "ansB": "Năng lực",
+    "ansC": "Vùng, miền",
+    "ansD": "Quốc gia thành viên",
+    "correction": "Ý kiến của bạn",
+    "id": "105"
+   },
+   {
+    "question": "Do not lazy",
+    "ansA": "Điện thoại bàn",
+    "ansB": "Đừng lười",
+    "ansC": "Bắt buộc",
+    "ansD": "Thái độ",
+    "correction": "Đừng lười",
+    "id": "106"
+   },
+   {
+    "question": "More learn more money",
+    "ansA": "Càng học càng nhiều tiền",
+    "ansB": "Sự phân loại",
+    "ansC": "Thông tin cá nhân",
+    "ansD": "Cao su",
+    "correction": "Càng học càng nhiều tiền",
+    "id": "107"
+   },
+   {
+    "question": "Farewell party",
+    "ansA": "Toán học",
+    "ansB": "Bác sỹ",
+    "ansC": "Máy ảnh kỹ thuật số",
+    "ansD": "Tiệc chìa tay",
+    "correction": "Tiệc chìa tay",
+    "id": "108"
+   },
+   {
+    "question": "Attend (v)",
+    "ansA": "Tham dự",
+    "ansB": "Dưa hấu",
+    "ansC": "Sức mạnh vô cực",
+    "ansD": "Máy ảnh Sony",
+    "correction": "Tham dự",
+    "id": "109"
+   },
+   {
+    "question": "Oral examination",
+    "ansA": "Gây ấn tượng",
+    "ansB": "Cuộc thi nói",
+    "ansC": "Nguồn cảm hứng",
+    "ansD": "Dân tộc thiểu số",
+    "correction": "Cuộc thi nói",
+    "id": "110"
+   },
+   {
+    "question": "Dormitory",
+    "ansA": "Trang bị kiến thức",
+    "ansB": "Ký túc xá",
+    "ansC": "Người thông minh",
+    "ansD": "Tấm",
+    "correction": "Ký túc xá",
+    "id": "111"
+   },
+   {
+    "question": "Experience (n, v)",
+    "ansA": "Kinh nghiệm, trải qua",
+    "ansB": "Năng lực",
+    "ansC": "Máy ảnh kỹ thuật số",
+    "ansD": "Thuộc về nhiệt đới",
+    "correction": "Kinh nghiệm, trải qua",
+    "id": "112"
+   },
+   {
+    "question": "Reputation",
+    "ansA": "Hướng nam",
+    "ansB": "Độc đáo",
+    "ansC": "Danh tiếng",
+    "ansD": "Dưa hấu",
+    "correction": "Danh tiếng",
+    "id": "113"
+   },
+   {
+    "question": "Identifiabe",
+    "ansA": "Có thể nhận dạng",
+    "ansB": "Trợ lý kỹ thuật cá nhân",
+    "ansC": "Ngoại ngữ rất thuận tiện",
+    "ansD": "Trường tiểu học",
+    "correction": "Có thể nhận dạng",
+    "id": "114"
+   }
 ];
 const vnAnswerList = [
   {
@@ -1092,6 +1218,10 @@ const vnAnswerList = [
   {
     "answer": "Sự nghiệp",
     "id": "45"
+  },
+  {
+    "answer": "Thành công",
+    "id": "46"
   },
   {
     "answer": "Bức tường",
@@ -1312,10 +1442,9 @@ const vnAnswerList = [
 ];
 const userAccount = [
   {
+    "id": "1",
     "name": "Khôi",
     "score": 350,
-    "timeLastLogin": "timeLastLogin 1",
-    "id": "1"
   }
 ];
 
@@ -1352,6 +1481,13 @@ app.post('/vnAnswerList', (req, res) => {
   console.log(vnAnswerList);
   res.status(201).send(`Created answer`);
 });
+
+app.put('/userAccount', (req, res) => {
+  console.log(req.body);
+  console.log(`req:`,req.body);
+  res.send(`PUT REQUEST CALLED`);
+
+})
 
 app.delete('/engQuest', (req, res) => {
   console.log(req.body);
