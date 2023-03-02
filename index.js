@@ -919,8 +919,8 @@ const engQuest = [
     "ansD": "Máy ảnh kỹ thuật số",
     "correction": "Thợ máy",
     "id": "101"
-   },
-   {
+  },
+  {
     "question": "Table tennis",
     "ansA": "Bến cảng",
     "ansB": "Bóng bàn",
@@ -928,8 +928,8 @@ const engQuest = [
     "ansD": "Phân tích",
     "correction": "Bóng bàn",
     "id": "102"
-   },
-   {
+  },
+  {
     "question": "Diameter",
     "ansA": "Tiểu sử",
     "ansB": "Toán học",
@@ -937,8 +937,8 @@ const engQuest = [
     "ansD": "Đường kính",
     "correction": "Đường kính",
     "id": "103"
-   },
-   {
+  },
+  {
     "question": "Status",
     "ansA": "Những giá trị",
     "ansB": "Công thức",
@@ -946,8 +946,8 @@ const engQuest = [
     "ansD": "Trạng thái",
     "correction": "Trạng thái",
     "id": "104"
-   },
-   {
+  },
+  {
     "question": "Your opinion",
     "ansA": "Ý kiến của bạn",
     "ansB": "Năng lực",
@@ -955,8 +955,8 @@ const engQuest = [
     "ansD": "Quốc gia thành viên",
     "correction": "Ý kiến của bạn",
     "id": "105"
-   },
-   {
+  },
+  {
     "question": "Do not lazy",
     "ansA": "Điện thoại bàn",
     "ansB": "Đừng lười",
@@ -964,8 +964,8 @@ const engQuest = [
     "ansD": "Thái độ",
     "correction": "Đừng lười",
     "id": "106"
-   },
-   {
+  },
+  {
     "question": "More learn more money",
     "ansA": "Càng học càng nhiều tiền",
     "ansB": "Sự phân loại",
@@ -973,8 +973,8 @@ const engQuest = [
     "ansD": "Cao su",
     "correction": "Càng học càng nhiều tiền",
     "id": "107"
-   },
-   {
+  },
+  {
     "question": "Farewell party",
     "ansA": "Toán học",
     "ansB": "Bác sỹ",
@@ -982,8 +982,8 @@ const engQuest = [
     "ansD": "Tiệc chìa tay",
     "correction": "Tiệc chìa tay",
     "id": "108"
-   },
-   {
+  },
+  {
     "question": "Attend (v)",
     "ansA": "Tham dự",
     "ansB": "Dưa hấu",
@@ -991,8 +991,8 @@ const engQuest = [
     "ansD": "Máy ảnh Sony",
     "correction": "Tham dự",
     "id": "109"
-   },
-   {
+  },
+  {
     "question": "Oral examination",
     "ansA": "Gây ấn tượng",
     "ansB": "Cuộc thi nói",
@@ -1000,8 +1000,8 @@ const engQuest = [
     "ansD": "Dân tộc thiểu số",
     "correction": "Cuộc thi nói",
     "id": "110"
-   },
-   {
+  },
+  {
     "question": "Dormitory",
     "ansA": "Trang bị kiến thức",
     "ansB": "Ký túc xá",
@@ -1009,8 +1009,8 @@ const engQuest = [
     "ansD": "Tấm",
     "correction": "Ký túc xá",
     "id": "111"
-   },
-   {
+  },
+  {
     "question": "Experience (n, v)",
     "ansA": "Kinh nghiệm, trải qua",
     "ansB": "Năng lực",
@@ -1018,8 +1018,8 @@ const engQuest = [
     "ansD": "Thuộc về nhiệt đới",
     "correction": "Kinh nghiệm, trải qua",
     "id": "112"
-   },
-   {
+  },
+  {
     "question": "Reputation",
     "ansA": "Hướng nam",
     "ansB": "Độc đáo",
@@ -1027,16 +1027,34 @@ const engQuest = [
     "ansD": "Dưa hấu",
     "correction": "Danh tiếng",
     "id": "113"
-   },
-   {
-    "question": "Identifiabe",
+  },
+  {
+    "question": "Identifiable",
     "ansA": "Có thể nhận dạng",
     "ansB": "Trợ lý kỹ thuật cá nhân",
     "ansC": "Ngoại ngữ rất thuận tiện",
     "ansD": "Trường tiểu học",
     "correction": "Có thể nhận dạng",
     "id": "114"
-   }
+  },
+  {
+    "id": "115",
+    "question": "Generation",
+    "ansA": "Đánh giá",
+    "ansB": "Cao su",
+    "ansC": "Thế hệ",
+    "ansD": "Hành chính",
+    "correction": "Thế hệ"
+  },
+  {
+    "id": "116",
+    "question": "Put on",
+    "ansA": "Mặc vào",
+    "ansB": "Hiệp hội",
+    "ansC": "Điện thoại rảnh tay",
+    "ansD": "Hành chính",
+    "correction": "Mặc vào"
+  }
 ];
 const vnAnswerList = [
   {
@@ -1439,12 +1457,21 @@ const vnAnswerList = [
     "answer": "Độc đáo",
     "id": "100"
   },
+  {
+    "id": "101",
+    "answer": "Thế hệ"
+  },
+  {
+    "id": "102",
+    "answer": "Mặc vào"
+  }
+
 ];
 const userAccount = [
   {
     "id": "1",
     "name": "Khôi",
-    "score": 350,
+    "score": 453,
   }
 ];
 
@@ -1471,7 +1498,7 @@ app.post('/engQuest', (req, res) => {
   console.log(req.body);
   const english = req.body;
   engQuest.push(english);
-  res.status(201).send(`Created user`);
+  res.status(201).send(`Created question`);
 });
 
 app.post('/vnAnswerList', (req, res) => {
@@ -1484,7 +1511,7 @@ app.post('/vnAnswerList', (req, res) => {
 
 app.put('/userAccount', (req, res) => {
   console.log(req.body);
-  console.log(`req:`,req.body);
+  console.log(`req:`, req.body);
   res.send(`PUT REQUEST CALLED`);
 
 })
@@ -1495,7 +1522,7 @@ app.delete('/engQuest', (req, res) => {
 
 
 });
-app.delete('/vnAnswerList', (req, res ) => {
+app.delete('/vnAnswerList', (req, res) => {
   console.log(req.body);
   res.send('DELETE REQUEST CALLED');
 
