@@ -1475,6 +1475,164 @@ const userAccount = [
   }
 ];
 
+const march =
+  [
+    {
+      "id": 1,
+      "name": "WED",
+      "workingTime": 0
+    },
+    {
+      "id": 2,
+      "name": "THU",
+      "workingTime": 0
+    },
+    {
+      "id": 3,
+      "name": "FRI",
+      "workingTime": 0
+    },
+    {
+      "id": 4,
+      "name": "SAT",
+      "workingTime": 0
+    },
+    {
+      "id": 5,
+      "name": "SUN",
+      "workingTime": 0
+    },
+    {
+      "id": 6,
+      "name": "MON",
+      "workingTime": 0
+    },
+    {
+      "id": 7,
+      "name": "TUE",
+      "workingTime": 0
+    },
+    {
+      "id": 8,
+      "name": "WED",
+      "workingTime": 0
+    },
+    {
+      "id": 9,
+      "name": "THU",
+      "workingTime": 0
+    },
+    {
+      "id": 10,
+      "name": "FRI",
+      "workingTime": 0
+    },
+    {
+      "id": 11,
+      "name": "SAT",
+      "workingTime": 0
+    },
+    {
+      "id": 12,
+      "name": "SUN",
+      "workingTime": 0
+    },
+    {
+      "id": 13,
+      "name": "MON",
+      "workingTime": 0
+    },
+    {
+      "id": 14,
+      "name": "TUE",
+      "workingTime": 0
+    },
+    {
+      "id": 15,
+      "name": "WED",
+      "workingTime": 0
+    },
+    {
+      "id": 16,
+      "name": "THU",
+      "workingTime": 0
+    },
+    {
+      "id": 17,
+      "name": "FRI",
+      "workingTime": 0
+    },
+    {
+      "id": 18,
+      "name": "SAT",
+      "workingTime": 0
+    },
+    {
+      "id": 19,
+      "name": "SUN",
+      "workingTime": 0
+    },
+    {
+      "id": 20,
+      "name": "MON",
+      "workingTime": 0
+    },
+    {
+      "id": 21,
+      "name": "TUE",
+      "workingTime": 0
+    },
+    {
+      "id": 22,
+      "name": "WED",
+      "workingTime": 0
+    },
+    {
+      "id": 23,
+      "name": "THU",
+      "workingTime": 0
+    },
+    {
+      "id": 24,
+      "name": "FRI",
+      "workingTime": 0
+    },
+    {
+      "id": 25,
+      "name": "SAT",
+      "workingTime": 0
+    },
+    {
+      "id": 26,
+      "name": "SUN",
+      "workingTime": 0
+    },
+    {
+      "id": 27,
+      "name": "MON",
+      "workingTime": 0
+    },
+    {
+      "id": 28,
+      "name": "TUE",
+      "workingTime": 0
+    },
+    {
+      "id": 29,
+      "name": "WED",
+      "workingTime": 0
+    },
+    {
+      "id": 30,
+      "name": "THU",
+      "workingTime": 0
+    },
+    {
+      "id": 31,
+      "name": "FRI",
+      "workingTime": 0
+    }
+  ];
 
 app.get('/', (req, res) => {
   res.send('Welcome to our homepage.');
@@ -1508,9 +1666,28 @@ app.post('/vnAnswerList', (req, res) => {
   console.log(vnAnswerList);
   res.status(201).send(`Created answer`);
 });
+app.get('/march', (req, res) => {
+  console.log(req.body);
+  console.log(march);
+  res.send(march);
+});
+app.put('/march/:id', (req, res) => {
+  let id = +req.params.id;
+  let body = req.body;
+  // console.log(body);
+  let index = march.findIndex((e) => e.id === id);
+  if (index >= 0) {
+    let updateId = { id: id, ...body };
+    march[index] = updateId;
+    res.send(updateId);
+
+  } else {
+    res.sendStatus(404).send(`No day id found`);
+  }
+
+});
 
 app.put('/userAccount', (req, res) => {
-  console.log(req.body);
   console.log(`req:`, req.body);
   res.send(`PUT REQUEST CALLED`);
 
